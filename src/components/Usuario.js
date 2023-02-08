@@ -1,13 +1,17 @@
-export default function Usuario() {
+import React, { useState } from 'react'
+export default function Usuario(props) {
+  let nomePrompt;
+  let nomeUsuario = !nomePrompt ? props.nome : nomePrompt;
     return (
         <div class="usuario">
-            <img src="assets/img/catanacomics.svg" alt="imagem de perfil"/>
+            <img data-test="profile-image" src={props.imagem} alt="imagem de perfil"/>
             <div class="texto">
               <span>
-                <strong>catanacomics</strong>
-                <ion-icon name="pencil"></ion-icon>
+                <strong data-test="name">{nomeUsuario}</strong>
+                <ion-icon data-test="edit-name" onClick={() => nomePrompt = prompt("Insira um nome de usuário")} name="pencil"></ion-icon>
               </span>
             </div>
           </div>
     )
 }
+

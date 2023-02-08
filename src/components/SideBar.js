@@ -3,7 +3,7 @@ import Sugestoes from "./Sugestoes"
 export default function SideBar() {
     return (
         <div class="sidebar">
-          <Usuario />
+          <Usuario nome="catatacomics" imagem="assets/img/catanacomics.svg"/>
           <Sugestoes />
   
           <div class="links">
