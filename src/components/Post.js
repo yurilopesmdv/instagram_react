@@ -48,12 +48,12 @@ export default function Post() {
                 <div class="fundo">
                     <div class="acoes">
                         <div>
-                            <ion-icon data-test="like-post" name="heart-outline"></ion-icon>
+                            <ion-icon data-test="like-post" className="like" name="heart-outline"></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
                         <div>
-                            <ion-icon data-test="save-post" name="bookmark-outline"></ion-icon>
+                            <ion-icon data-test="save-post"  name="bookmark-outline"></ion-icon>
                         </div>
                     </div>
 
