@@ -43,7 +43,7 @@ export default function Post(props) {
                 </div>
 
                 <div class="conteudo">
-                    <img data-test="post-image" src={props.imagemPost} onDoubleClick={darLikeImg} alt={props.altPost} />
+                    <img data-test="post-image" src={props.imagemPost} onClick={darLikeImg} onDoubleClick={darLikeImg} alt={props.altPost} />
                 </div>
 
                 <div class="fundo">
@@ -61,7 +61,7 @@ export default function Post(props) {
                     <div class="curtidas">
                         <img src={props.imagemCurtida} alt={props.altCurtida} />
                         <div class="texto">
-                            Curtido por <strong>{props.altCurtida}</strong> e <strong data-test="likes-number" >outras {numeroCurtida} pessoas</strong>
+                            Curtido por <strong>{props.altCurtida}</strong> e <strong data-test="likes-number">outras {numeroCurtida} pessoas</strong>
                         </div>
                     </div>
                 </div>
