@@ -1,9 +1,11 @@
 import { useState } from "react"
+import { SyntheticEvent } from "react";
 export default function Post(props) {
     const [iconeCoracao, setIconeCoracao] = useState("heart-outline");
     const [iconeSalvo, setIconeSalvo] = useState("bookmark-outline");
     const [classCoracao, setClassCoracao] = useState("");
     const [numeroCurtida, setNumeroCurtida] = useState(props.qntCurtidas);
+
     function darLike() { 
         if(iconeCoracao === "heart-outline") {
             setIconeCoracao("heart");
@@ -22,6 +24,14 @@ export default function Post(props) {
             setIconeSalvo("bookmark-outline")
         }
     }
+    function darLikeImg() {
+        console.log('duplo clique');
+        if(iconeCoracao === "heart-outline") {
+            setIconeCoracao("heart");
+            setClassCoracao("red");
+            setNumeroCurtida(props.qntCurtidas + 1);
+        }
+    }
     return ( <div data-test="post" class="post">
                 <div class="topo">
                     <div class="usuario">
@@ -34,7 +44,7 @@ export default function Post(props) {
                 </div>
 
                 <div class="conteudo">
-                    <img src={props.imagemPost} alt={props.altPost} />
+                    <img src={props.imagemPost} onDoubleClick={darLikeImg} alt={props.altPost} />
                 </div>
 
                 <div class="fundo">
