@@ -1,5 +1,4 @@
 import { useState } from "react"
-import { SyntheticEvent } from "react";
 export default function Post(props) {
     const [iconeCoracao, setIconeCoracao] = useState("heart-outline");
     const [iconeSalvo, setIconeSalvo] = useState("bookmark-outline");
@@ -44,7 +43,7 @@ export default function Post(props) {
                 </div>
 
                 <div class="conteudo">
-                    <img src={props.imagemPost} onDoubleClick={darLikeImg} alt={props.altPost} />
+                    <img src={props.imagemPost} onClick={darLikeImg} onDoubleClick={darLikeImg} alt={props.altPost} />
                 </div>
 
                 <div class="fundo">
@@ -62,7 +61,7 @@ export default function Post(props) {
                     <div class="curtidas">
                         <img src={props.imagemCurtida} alt={props.altCurtida} />
                         <div class="texto">
-                            Curtido por <strong data-test="likes-number">{props.altCurtida}</strong> e <strong>outras {numeroCurtida} pessoas</strong>
+                            Curtido por <strong>{props.altCurtida}</strong> e <strong data-test="likes-number">outras {numeroCurtida} pessoas</strong>
                         </div>
                     </div>
                 </div>
